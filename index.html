@@ -28,15 +28,26 @@
       <a href="#beneficios">Benefícios</a>
       <a href="#faq">Dúvidas</a>
     </nav>
-    <a href="#demonstracao" class="btn btn--primary btn--sm" data-cta="header">Agendar demonstração</a>
+    <a href="#demonstracao" class="btn btn--primary btn--sm topbar__cta" data-cta="header">Agendar demonstração</a>
+    <button type="button" class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="menu-btn__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
   </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu" hidden>
+    <div class="container">
+      <a href="#simulador">Simulador</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#demonstracao" class="btn btn--primary btn--block" data-cta="menu">Agendar demonstração</a>
+    </div>
+  </nav>
 </header>
 
 <main>
 
 <!-- ============ HERO / BANNER ============ -->
 <section class="hero">
-  <div class="hero__glow" aria-hidden="true"></div>
   <div class="container hero__grid">
     <div class="hero__copy">
       <img class="hero__logo" src="assets/logo-webseek-figurativo.png" alt="Webseek Figurativo" width="1220" height="400">

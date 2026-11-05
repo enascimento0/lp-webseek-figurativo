@@ -532,3 +532,22 @@ document.addEventListener('click', (e) => {
   });
   hero.addEventListener('pointerleave', () => hero.classList.remove('has-glow'));
 })();
+
+/* =========================================================
+   Menu recolhido (tablet e celular)
+   ========================================================= */
+(() => {
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+  const setOpen = (open) => {
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  };
+  btn.addEventListener('click', (e) => { e.stopPropagation(); setOpen(menu.hidden); });
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('click', (e) => { if (!menu.hidden && !e.target.closest('.topbar')) setOpen(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setOpen(false); btn.focus(); } });
+  matchMedia('(min-width: 1025px)').addEventListener('change', (m) => { if (m.matches) setOpen(false); });
+})();
